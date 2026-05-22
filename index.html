@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Dépannage informatique à Saint-Chamond | PC, Mac & Consoles - AccessiDev</title>
+<meta name="description" content="AccessiDev propose du dépannage informatique à Saint-Chamond et dans toute la Loire : réparation PC, Mac, consoles, montage PC gaming, suppression de virus, récupération de données et assistance informatique rapide."/>
+<meta name="keywords" content="dépannage informatique saint chamond, réparation pc loire, dépannage ordinateur saint etienne, réparation console loire, montage pc gaming saint chamond, assistance informatique loire, réparateur pc saint chamond"/>
+<meta name="author" content="AccessiDev"/>
+<meta name="robots" content="index, follow"/>
+<meta name="geo.region" content="FR-42"/>
+<meta name="geo.placename" content="Saint-Chamond"/>
+<meta name="theme-color" content="#123A63"/>
+<link rel="canonical" href="https://accessidev.fr/"/>
+<meta property="og:title" content="AccessiDev - Dépannage informatique à Saint-Chamond"/>
+<meta property="og:description" content="Réparation PC, Mac, consoles, montage PC gaming et assistance informatique à Saint-Chamond, Saint-Étienne, Rive-de-Gier et dans la Loire."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="AccessiDev"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dépannage AccessiDev",
+  "alternateName": "AccessiDev",
+  "description": "Dépannage informatique, réparation PC et Mac, réparation console, montage PC gaming, réseau Wi-Fi et récupération de données à Saint-Chamond et dans la Loire.",
+  "url": "https://accessidev.fr/",
+  "telephone": "+33600000000",
+  "email": "contact@accessidev.fr",
+  "areaServed": [
+    "Saint-Chamond",
+    "Saint-Étienne",
+    "Rive-de-Gier",
+    "La Grand-Croix",
+    "L'Horme",
+    "Loire"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saint-Chamond",
+    "addressRegion": "Loire",
+    "postalCode": "42400",
+    "addressCountry": "FR"
+  },
+  "priceRange": "€€",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }],
+  "makesOffer": [
+    {"@type":"Offer","name":"Dépannage PC et Mac"},
+    {"@type":"Offer","name":"Réparation console"},
+    {"@type":"Offer","name":"Montage PC gaming"},
+    {"@type":"Offer","name":"Récupération de données"},
+    {"@type":"Offer","name":"Assistance réseau et Wi-Fi"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div id="cur"></div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home');return false">
+    <div class="nav-logo-dot"></div>
+    AccessiDev
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home');return false" data-page="home" class="active-link">Accueil</a></li>
+    <li><a href="#" onclick="showPage('services');return false" data-page="services">Services</a></li>
+    <li><a href="#" onclick="showPage('montage');return false" data-page="montage">Montage PC</a></li>
+    <li><a href="#" onclick="showPage('console');return false" data-page="console">Console</a></li>
+    <li><a href="#" onclick="showPage('contact');return false" data-page="contact" class="nav-cta">RDV gratuit</a></li>
+  </ul>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false" type="button">
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ══ MENU MOBILE PREMIUM ══ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fermer le menu" type="button">✕</button>
+  <div class="mobile-menu-content">
+    <a href="#" onclick="showPage('home');closeMobileMenu();return false">Accueil</a>
+    <a href="#" onclick="showPage('services');closeMobileMenu();return false">Services</a>
+    <a href="#" onclick="showPage('montage');closeMobileMenu();return false">Montage PC</a>
+    <a href="#" onclick="showPage('console');closeMobileMenu();return false">Consoles</a>
+    <a href="#" onclick="showPage('contact');closeMobileMenu();return false" class="mobile-cta">Diagnostic gratuit</a>
+    <div class="mobile-menu-footer">Dépannage informatique à Saint-Chamond & dans la Loire</div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE ACCUEIL ═══════════ -->
+<div class="page active home-page" id="page-home">
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        Disponible · Saint-Chamond, Loire.
+      </div>
+      <h1>
+        <span class="line">Votre</span>
+        <span class="line"><span class="accent">tech en panne ?</span></span>
+        <span class="line"><span class="stroke">On règle</span></span>
+        <span class="line">ça.</span>
+      </h1>
+      <p class="hero-desc">Dépannage PC/Mac, montage sur mesure et réparation console à Saint-Chamond et dans la Loire. Un diagnostic clair, un devis transparent, une intervention soignée.</p>
+      <div class="hero-btns">
+        <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Prendre RDV gratuit</a>
+        <a class="btn btn-outline" href="#" onclick="showPage('services');return false">Voir les services →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hcard-label">// Stats</div>
+      <div class="hcard-stat">
+        <div class="hcard-n" id="cnt-repairs">0<em>+</em></div>
+        <div class="hcard-l">Appareils réparés</div>
+      </div>
+      <div class="hcard-divider"></div>
+      <div class="hcard-stat">
+        <div class="hcard-n">48<em>h</em></div>
+        <div class="hcard-l">Délai moyen</div>
+      </div>
+      <div class="hcard-divider"></div>
+      <div class="hcard-stat">
+        <div class="hcard-n">98<em>%</em></div>
+        <div class="hcard-l">Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seo-local-block rv" aria-label="Dépannage informatique local">
+    <h2>Dépannage informatique à Saint-Chamond et dans la Loire</h2>
+    <p>AccessiDev intervient pour la réparation d’ordinateurs PC et Mac, le montage de PC gaming, la réparation de consoles, l’optimisation réseau Wi-Fi et la récupération de données à Saint-Chamond, Saint-Étienne, Rive-de-Gier et dans les communes voisines.</p>
+  </section>
+
+  <div class="trust-row">
+    <div class="tpill"><span>✓</span> Diagnostic gratuit</div>
+    <div class="tpill"><span>↯</span> Réponse en 2h</div>
+    <div class="tpill"><span>◆</span> Garantie 3 mois</div>
+    <div class="tpill"><span>⌂</span> À domicile possible</div>
+  </div>
+
+  <section class="services-section">
+    <div class="s-header rv">
+      <h2 class="s-title">Tous les <em>problèmes tech</em>,<br>une seule adresse.</h2>
+      <button class="s-more" onclick="showPage('services')">Voir tout →</button>
+    </div>
+    <div class="scard-grid">
+      <div class="scard rv" onclick="showPage('services')" style="transition-delay:.05s">
+        <div class="scard-color-bar c-indigo"></div>
+        <span class="scard-icon">▣</span>
+        <div class="scard-title">Dépannage PC & Mac</div>
+        <p class="scard-desc">Virus, plantage, lenteurs, démarrage impossible. Je règle le problème vite et bien.</p>
+        <div class="scard-foot"><div class="scard-price">40€<sub> à partir de</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+      <div class="scard rv" onclick="showPage('montage')" style="transition-delay:.1s">
+        <div class="scard-color-bar c-green"></div>
+        <span class="scard-icon">▤</span>
+        <div class="scard-title">Montage PC sur mesure</div>
+        <p class="scard-desc">Gaming, création, bureautique. Votre PC idéal, selon votre budget.</p>
+        <div class="scard-foot"><div class="scard-price">70€<sub> montage</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+      <div class="scard rv" onclick="showPage('console')" style="transition-delay:.15s">
+        <div class="scard-color-bar c-orange"></div>
+        <span class="scard-icon">◇</span>
+        <div class="scard-title">Réparation Console</div>
+        <p class="scard-desc">PS5, Xbox, Switch. Surchauffe, lecteur, manette. Votre console repart comme neuve.</p>
+        <div class="scard-foot"><div class="scard-price">25€<sub> à partir de</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+      <div class="scard rv" onclick="showPage('services')" style="transition-delay:.2s">
+        <div class="scard-color-bar c-indigo"></div>
+        <span class="scard-icon">⌁</span>
+        <div class="scard-title">Réseau & Wi-Fi</div>
+        <p class="scard-desc">Connexion instable, Wi-Fi faible, config routeur, NAS. Réseau stable et sécurisé.</p>
+        <div class="scard-foot"><div class="scard-price">25€<sub> + prix déplacement</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+      <div class="scard rv" onclick="showPage('services')" style="transition-delay:.25s">
+        <div class="scard-color-bar c-green"></div>
+        <span class="scard-icon">▥</span>
+        <div class="scard-title">Récupération données</div>
+        <p class="scard-desc">Disque mort, fichiers perdus, ransomware. Je tente de tout récupérer.</p>
+        <div class="scard-foot"><div class="scard-price">50€<sub> à partir de</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+      <div class="scard rv" onclick="showPage('services')" style="transition-delay:.3s">
+        <div class="scard-color-bar c-orange"></div>
+        <span class="scard-icon">↯</span>
+        <div class="scard-title">Upgrade & Boost</div>
+        <p class="scard-desc">Plus de RAM, SSD NVMe, nouvelle GPU. Boostez votre machine sans en racheter une.</p>
+        <div class="scard-foot"><div class="scard-price">35€<sub> pose</sub></div><div class="scard-arrow">→</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section rv">
+    <h2 class="how-title">Simple du début à la fin.</h2>
+    <p class="how-sub">4 étapes claires, zéro jargon, zéro surprise.</p>
+    <div class="steps-grid">
+      <div class="step-card rv" style="transition-delay:.05s">
+        <div class="step-num-badge n1">1</div>
+        <div class="step-name">Vous me contactez</div>
+        <p class="step-body">Par tel, WhatsApp ou formulaire. Je réponds sous 2h. C'est gratuit, sans engagement.</p>
+      </div>
+      <div class="step-card rv" style="transition-delay:.1s">
+        <div class="step-num-badge n2">2</div>
+        <div class="step-name">Je diagnostique</div>
+        <p class="step-body">Analyse complète. Devis clair et transparent avant le moindre travail.</p>
+      </div>
+      <div class="step-card rv" style="transition-delay:.15s">
+        <div class="step-num-badge n3">3</div>
+        <div class="step-name">J'interviens</div>
+        <p class="step-body">À domicile ou en atelier. Délai moyen 24–48h. Je m'adapte à votre agenda.</p>
+      </div>
+      <div class="step-card rv" style="transition-delay:.2s">
+        <div class="step-num-badge n4">4</div>
+        <div class="step-name">Vous repartez</div>
+        <p class="step-body">Appareil testé, rapport fourni. Garantie 3 mois main d'œuvre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testi-section rv">
+    <h2 class="testi-title">Ce qu'ils disent.</h2>
+    <div class="tcard-grid">
+      <div class="tcard rv" style="transition-delay:.05s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">« PC mort après une mise à jour. Diagnostic en 20 min, réglé en 2h. Tarif hyper honnête, super contact. »</p>
+        <div class="t-author"><div class="t-av">ML</div><div><div class="t-name">Marie L.</div><div class="t-role">Dépannage Windows · Saint-Chamond</div></div></div>
+      </div>
+      <div class="tcard rv" style="transition-delay:.1s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">« PC gaming monté sur mesure pour mon fils. Conseil top, montage soigné, tout tourne à fond. »</p>
+        <div class="t-author"><div class="t-av">TM</div><div><div class="t-name">Thomas M.</div><div class="t-role">Montage PC Gaming · Saint-Étienne</div></div></div>
+      </div>
+      <div class="tcard rv" style="transition-delay:.15s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">« PS5 qui s'éteignait toute seule. Repâte + nettoyage : aucun problème depuis 3 mois. Nickel. »</p>
+        <div class="t-author"><div class="t-av">KD</div><div><div class="t-name">Kevin D.</div><div class="t-role">Réparation PS5 · Loire</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1100px;margin:80px auto 0;padding:0 24px" class="rv">
+    <div class="cta-band">
+      <h2>Un problème ? Parlons-en maintenant.</h2>
+      <p>Diagnostic gratuit · Réponse sous 2h · Sans engagement</p>
+      <div class="cta-btns">
+        <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Prendre RDV</a>
+        <a class="btn btn-white" href="tel:0600000000">Appeler directement</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE SERVICES ═══════════ -->
+<div class="page srv-page" id="page-services">
+  <div class="page-top rv">
+    <div class="pt-eyebrow">Catalogue complet</div>
+    <h1 class="pt-h1">Tous les<br><em>services</em></h1>
+    <p class="pt-sub">Du dépannage express au projet sur mesure à Saint-Chamond, Saint-Étienne et dans la Loire. Devis gratuit sur chaque prestation.</p>
+  </div>
+  <div class="srv-full-grid">
+    <div class="sfcard rv" style="transition-delay:.05s">
+      <div class="sfcard-top" style="background:var(--indigo)"></div>
+      <div class="sfcard-icon">▣</div>
+      <div class="sfcard-title">Dépannage PC & Mac</div>
+      <div class="sfcard-sub">Windows · macOS · Linux</div>
+      <p class="sfcard-body">PC lent, virus, écran noir, démarrage impossible, BSOD, mot de passe perdu… Je diagnostique et résous tous vos problèmes système rapidement.</p>
+      <div class="sfcard-tags"><span class="chip">Windows 11</span><span class="chip">macOS</span><span class="chip">Linux</span><span class="chip">Virus</span><span class="chip">BSOD</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">40€<small> à partir · diag offert</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('contact');return false">Réserver</a>
+      </div>
+    </div>
+    <div class="sfcard rv" style="transition-delay:.1s">
+      <div class="sfcard-top" style="background:var(--green)"></div>
+      <div class="sfcard-icon">▤</div>
+      <div class="sfcard-title">Montage PC</div>
+      <div class="sfcard-sub">Gaming · Workstation · Bureautique</div>
+      <p class="sfcard-body">Sélection des composants, assemblage, installation OS + drivers, benchmark 4h. Votre machine pensée pour durer.</p>
+      <div class="sfcard-tags"><span class="chip">Gaming</span><span class="chip">Workstation</span><span class="chip">Budget</span><span class="chip">Overclocking</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">70€<small> MO · pièces en sus</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('montage');return false">Configs →</a>
+      </div>
+    </div>
+    <div class="sfcard rv" style="transition-delay:.15s">
+      <div class="sfcard-top" style="background:var(--orange)"></div>
+      <div class="sfcard-icon">◇</div>
+      <div class="sfcard-title">Réparation Console</div>
+      <div class="sfcard-sub">PS4/5 · Xbox · Switch · Rétro</div>
+      <p class="sfcard-body">Surchauffe, lecteur Blu-ray, SSD, port HDMI, manettes. Tout type de panne, toutes générations.</p>
+      <div class="sfcard-tags"><span class="chip">PS4/PS5</span><span class="chip">Xbox</span><span class="chip">Switch</span><span class="chip">Rétro</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">25€<small> à partir · pièces en sus</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('console');return false">Réparations →</a>
+      </div>
+    </div>
+    <div class="sfcard rv" style="transition-delay:.2s">
+      <div class="sfcard-top" style="background:var(--indigo)"></div>
+      <div class="sfcard-icon">⌁</div>
+      <div class="sfcard-title">Réseau & Wi-Fi</div>
+      <div class="sfcard-sub">Routeur · Mesh · NAS · VPN</div>
+      <p class="sfcard-body">Connexion instable, Wi-Fi mort, config routeur, NAS familial, sécurisation réseau. Pour un réseau solide.</p>
+      <div class="sfcard-tags"><span class="chip">Wi-Fi 6</span><span class="chip">Mesh</span><span class="chip">NAS</span><span class="chip">VPN</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">25€<small> + prix déplacement</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('contact');return false">Réserver</a>
+      </div>
+    </div>
+    <div class="sfcard rv" style="transition-delay:.25s">
+      <div class="sfcard-top" style="background:var(--green)"></div>
+      <div class="sfcard-icon">▥</div>
+      <div class="sfcard-title">Récupération données</div>
+      <div class="sfcard-sub">HDD · SSD · NVMe · RAID · USB</div>
+      <p class="sfcard-body">Disque endommagé, formatage accidentel, ransomware, SSD corrompu. Récupération logicielle avec les meilleurs outils.</p>
+      <div class="sfcard-tags"><span class="chip">HDD</span><span class="chip">SSD</span><span class="chip">NVMe</span><span class="chip">RAID</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">50€<small> à partir · sans garantie résultat</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('contact');return false">Réserver</a>
+      </div>
+    </div>
+    <div class="sfcard rv" style="transition-delay:.3s">
+      <div class="sfcard-top" style="background:var(--orange)"></div>
+      <div class="sfcard-icon">↯</div>
+      <div class="sfcard-title">Upgrade & Optimisation</div>
+      <div class="sfcard-sub">RAM · SSD · GPU · Thermique</div>
+      <p class="sfcard-body">RAM, SSD NVMe, nouvelle carte graphique, nettoyage + repâte thermique. Boostez votre machine sans en racheter une.</p>
+      <div class="sfcard-tags"><span class="chip">RAM</span><span class="chip">SSD/NVMe</span><span class="chip">GPU</span><span class="chip">Nettoyage</span></div>
+      <div class="sfcard-footer">
+        <div><div class="sfcard-price">35€<small> pose · pièces en sus</small></div></div>
+        <a class="btn btn-dark" style="padding:9px 16px;font-size:13px" href="#" onclick="showPage('contact');return false">Réserver</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE MONTAGE PC ═══════════ -->
+<div class="page pc-page" id="page-montage">
+  <div class="page-top rv">
+    <div class="pt-eyebrow">Assemblage sur mesure</div>
+    <h1 class="pt-h1">Montage<br><em>PC</em></h1>
+    <p class="pt-sub">Je construis votre PC idéal selon votre usage et votre budget. Chaque build est unique.</p>
+    <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Demander un devis gratuit</a>
+  </div>
+  <div class="includes-wrap rv">
+    <div class="section-label">Ce qui est inclus dans chaque montage</div>
+    <div class="includes-g">
+      <div class="inc-item"><div class="inc-ic">⌕</div><div class="inc-text"><strong>Conseil & sélection</strong><span>Meilleurs composants pour votre budget</span></div></div>
+      <div class="inc-item"><div class="inc-ic">◆</div><div class="inc-text"><strong>Assemblage soigné</strong><span>Câblage propre, gestion thermique</span></div></div>
+      <div class="inc-item"><div class="inc-ic">◉</div><div class="inc-text"><strong>Installation OS</strong><span>Windows ou Linux, tous les drivers</span></div></div>
+      <div class="inc-item"><div class="inc-ic">◫</div><div class="inc-text"><strong>Tests de stabilité</strong><span>Benchmark min. 4h avant livraison</span></div></div>
+      <div class="inc-item"><div class="inc-ic">◆</div><div class="inc-text"><strong>Garantie 3 mois MO</strong><span>Sur la main d'œuvre</span></div></div>
+      <div class="inc-item"><div class="inc-ic">▦</div><div class="inc-text"><strong>Rapport de build</strong><span>Fiche récap complète de votre config</span></div></div>
+    </div>
+  </div>
+    <div class="section-label" style="padding:0 24px;max-width:1100px;margin:0 auto 16px">Configurations types</div>
+  <div class="builds-wrap">
+    <div class="bcard rv" style="transition-delay:.05s">
+      <div class="bcard-tier">// Entrée de gamme</div>
+      <div class="bcard-name">Entry Gamer</div>
+      <div class="build-specs">
+        <div class="bspec-row"><span class="bspec-key">CPU</span><span class="bspec-val">Ryzen 5 7600</span></div>
+        <div class="bspec-row"><span class="bspec-key">GPU</span><span class="bspec-val">RTX 4060</span></div>
+        <div class="bspec-row"><span class="bspec-key">RAM</span><span class="bspec-val">16 Go DDR5</span></div>
+        <div class="bspec-row"><span class="bspec-key">Stockage</span><span class="bspec-val">1 To NVMe</span></div>
+      </div>
+      <div class="bcard-tags"><span class="chip">1080p Ultra</span><span class="chip">144 FPS+</span><span class="chip">Silencieux</span></div>
+      <div class="bcard-price">~750€</div>
+      <div class="bcard-note">composants estimés + 70€ montage</div>
+      <a class="btn btn-dark" style="width:100%;justify-content:center" href="#" onclick="showPage('contact');return false">Me contacter</a>
+    </div>
+    <div class="bcard feat rv" style="transition-delay:.1s">
+      <div class="feat-badge">★ Le plus populaire</div>
+      <div class="bcard-tier">// Mid-Range</div>
+      <div class="bcard-name">Mid Beast</div>
+      <div class="build-specs">
+        <div class="bspec-row"><span class="bspec-key">CPU</span><span class="bspec-val">Ryzen 7 7800X3D</span></div>
+        <div class="bspec-row"><span class="bspec-key">GPU</span><span class="bspec-val">RTX 4070 Ti</span></div>
+        <div class="bspec-row"><span class="bspec-key">RAM</span><span class="bspec-val">32 Go DDR5</span></div>
+        <div class="bspec-row"><span class="bspec-key">Stockage</span><span class="bspec-val">2 To NVMe</span></div>
+      </div>
+      <div class="bcard-tags"><span class="chip">1440p Ultra</span><span class="chip">165 FPS+</span><span class="chip">Futur-proof</span></div>
+      <div class="bcard-price">~1 500€</div>
+      <div class="bcard-note">composants estimés + 70€ montage</div>
+      <a class="btn btn-green" style="width:100%;justify-content:center;border-color:transparent" href="#" onclick="showPage('contact');return false">Me contacter</a>
+    </div>
+    <div class="bcard rv" style="transition-delay:.15s">
+      <div class="bcard-tier">// High-End</div>
+      <div class="bcard-name">Creator Pro</div>
+      <div class="build-specs">
+        <div class="bspec-row"><span class="bspec-key">CPU</span><span class="bspec-val">Ryzen 9 9900X</span></div>
+        <div class="bspec-row"><span class="bspec-key">GPU</span><span class="bspec-val">RTX 4090</span></div>
+        <div class="bspec-row"><span class="bspec-key">RAM</span><span class="bspec-val">64 Go DDR5</span></div>
+        <div class="bspec-row"><span class="bspec-key">Stockage</span><span class="bspec-val">4 To NVMe</span></div>
+      </div>
+      <div class="bcard-tags"><span class="chip">4K Ultra</span><span class="chip">Rendu 3D</span><span class="chip">Streaming</span></div>
+      <div class="bcard-price">~3 000€</div>
+      <div class="bcard-note">composants estimés + 70€ montage</div>
+      <a class="btn btn-dark" style="width:100%;justify-content:center" href="#" onclick="showPage('contact');return false">Me contacter</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE CONSOLE ═══════════ -->
+<div class="page con-page" id="page-console">
+  <div class="page-top rv">
+    <div class="pt-eyebrow">Réparation · Toutes générations</div>
+    <h1 class="pt-h1">Console<br><em>Repair</em></h1>
+    <p class="pt-sub">PS5, Xbox, Switch, rétro gaming. Diagnostic gratuit, pièces de qualité, garantie sur la pose.</p>
+    <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Diagnostiquer ma console</a>
+  </div>
+  <div class="includes-wrap rv" style="padding-bottom:0">
+    <div class="section-label">Consoles prises en charge</div>
+  </div>
+  <div class="platforms-g rv">
+    <div class="plat-card"><div class="plat-ic">◇</div><div class="plat-name">PlayStation 4 & 5</div></div>
+    <div class="plat-card"><div class="plat-ic">◇</div><div class="plat-name">Xbox One & Series</div></div>
+    <div class="plat-card"><div class="plat-ic">◇</div><div class="plat-name">Nintendo Switch</div></div>
+    <div class="plat-card"><div class="plat-ic">◇</div><div class="plat-name">Rétro Gaming</div></div>
+  </div>
+  <div class="repairs-wrap rv">
+    <div class="section-label" style="margin-bottom:16px">Tarifs des réparations ◆</div>
+    <div class="repair-list">
+      <div class="rrow"><div class="r-ic">≋</div><div class="r-info"><div class="r-name">Repâte thermique + nettoyage</div><div class="r-desc">Résout 90% des surchauffes. Console silencieuse et stable.</div></div><div class="r-price">25€</div></div>
+      <div class="rrow"><div class="r-ic">◎</div><div class="r-info"><div class="r-name">Remplacement lecteur Blu-ray</div><div class="r-desc">Pose incluse, pièce en sus selon disponibilité.</div></div><div class="r-price">35€</div></div>
+      <div class="rrow"><div class="r-ic">◉</div><div class="r-info"><div class="r-name">Upgrade SSD / Disque dur</div><div class="r-desc">Clonage de l'ancien disque inclus. Pièce en sus.</div></div><div class="r-price">30€</div></div>
+      <div class="rrow"><div class="r-ic">◇</div><div class="r-info"><div class="r-name">Réparation manette</div><div class="r-desc">Joysticks, gâchettes, connecteur de charge — toutes les pannes.</div></div><div class="r-price">20€</div></div>
+      <div class="rrow"><div class="r-ic">▭</div><div class="r-info"><div class="r-name">Remplacement port HDMI</div><div class="r-desc">Micro-soudure, toutes consoles récentes.</div></div><div class="r-price">45€</div></div>
+      <div class="rrow"><div class="r-ic">⌕</div><div class="r-info"><div class="r-name">Diagnostic complet</div><div class="r-desc">Compte-rendu détaillé et devis avant toute intervention.</div></div><div class="r-price free">Gratuit</div></div>
+    </div>
+    <div style="padding:0 24px;max-width:1100px;margin:0 auto">
+      <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Prendre RDV · Diagnostic gratuit</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE CONTACT ═══════════ -->
+<div class="page cnt-page" id="page-contact">
+  <div class="page-top rv">
+    <div class="pt-eyebrow">Devis gratuit · Sans engagement</div>
+    <h1 class="pt-h1">Parlons de<br>votre <em>problème</em></h1>
+    <p class="pt-sub">Je vous réponds sous 2h avec un diagnostic et un devis clair.</p>
+  </div>
+  <div class="cnt-grid">
+    <div class="cnt-infos rv">
+      <div class="cinfo-card"><div class="cinfo-ic">☎</div><div><div class="cinfo-label">Tél & WhatsApp</div><div class="cinfo-val">06 XX XX XX XX</div><div class="cinfo-note">Réponse sous 2h en journée</div></div></div>
+      <div class="cinfo-card"><div class="cinfo-ic">@</div><div><div class="cinfo-label">Email</div><div class="cinfo-val">contact@accessidev.fr</div><div class="cinfo-note">Réponse sous 24h</div></div></div>
+      <div class="cinfo-card"><div class="cinfo-ic">⌖</div><div><div class="cinfo-label">Zone</div><div class="cinfo-val">Saint-Chamond, Loire</div><div class="cinfo-note">Déplacement à domicile +15€</div></div></div>
+      <div class="cinfo-card"><div class="cinfo-ic">◴</div><div><div class="cinfo-label">Horaires</div><div class="cinfo-val">Lun–Sam · 9h–19h</div><div class="cinfo-note">Urgences sur demande</div></div></div>
+    </div>
+    <div class="cnt-form-wrap rv">
+      <div class="cnt-form-title">Envoyer une demande</div>
+      <form id="contact-form" action="contact.php" method="post" novalidate>
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+        <div class="frow">
+          <div class="fg"><label class="fl" for="firstname">Prénom</label><input id="firstname" name="firstname" type="text" class="fi" placeholder="Jean" maxlength="60" autocomplete="given-name" required/></div>
+          <div class="fg"><label class="fl" for="lastname">Nom</label><input id="lastname" name="lastname" type="text" class="fi" placeholder="Dupont" maxlength="60" autocomplete="family-name" required/></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label class="fl" for="phone">Téléphone</label><input id="phone" name="phone" type="tel" class="fi" placeholder="06 00 00 00 00" maxlength="25" autocomplete="tel" required/></div>
+          <div class="fg"><label class="fl" for="email">Email</label><input id="email" name="email" type="email" class="fi" placeholder="jean@email.com" maxlength="120" autocomplete="email" required/></div>
+        </div>
+        <div class="fg">
+          <label class="fl" for="request_type">Type de demande</label>
+          <select id="request_type" name="request_type" class="fi" required>
+            <option value="" disabled selected>Choisissez…</option>
+            <option>Dépannage PC / Mac</option>
+            <option>Montage PC sur mesure</option>
+            <option>Réparation console</option>
+            <option>Réseau & Wi-Fi</option>
+            <option>Récupération de données</option>
+            <option>Upgrade / Optimisation</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label class="fl" for="message">Décrivez votre problème</label>
+          <textarea id="message" name="message" class="fi" maxlength="1500" required placeholder="Ex : Mon PC ne démarre plus depuis hier soir, j'entends un bip au démarrage…"></textarea>
+        </div>
+        <button class="submit-btn" id="send-btn" type="submit">Envoyer ma demande · gratuit</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">Accessi<span>Dev</span></div>
+    <ul class="foot-links">
+      <li><a onclick="showPage('home')">Accueil</a></li>
+      <li><a onclick="showPage('services')">Services</a></li>
+      <li><a onclick="showPage('montage')">Montage PC</a></li>
+      <li><a onclick="showPage('console')">Console</a></li>
+      <li><a onclick="showPage('contact')">Contact</a></li>
+    </ul>
+    <div class="foot-copy">© 2025 Accessidev · Saint-Chamond, Loire</div>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur');
+let tx=0,ty=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
+(function loop(){
+  cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;
+  cur.style.left=cx+'px';cur.style.top=cy+'px';
+  requestAnimationFrame(loop);
+})();
+
+// ROUTER
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active-link',a.dataset.page===name));
+  document.querySelectorAll('.bi').forEach(b=>b.classList.toggle('active-b',b.dataset.bnav===name));
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initReveal,60);
+}
+
+// REVEAL
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+  },{threshold:.08});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>{
+    if(!el.classList.contains('vis'))obs.observe(el);
+    else el.classList.add('vis');
+  });
+}
+initReveal();
+
+// COUNTER ANIMATION
+function animCount(el,target,dur=1600){
+  let start=null;
+  const step=ts=>{
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.innerHTML=Math.round(ease*target)+'<em>+</em>';
+    if(p<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const cntEl=document.getElementById('cnt-repairs');
+const cntObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){animCount(cntEl,500);cntObs.disconnect()}
+});
+if(cntEl)cntObs.observe(cntEl);
+
+
+// MOBILE MENU
+const mobileBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function closeMobileMenu(){
+  if(!mobileMenu || !mobileBtn) return;
+  mobileMenu.classList.remove('active');
+  mobileMenu.setAttribute('aria-hidden','true');
+  mobileBtn.setAttribute('aria-expanded','false');
+}
+
+if(mobileBtn && mobileMenu){
+  const mobileCloseBtn = document.getElementById('mobileMenuClose');
+
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('active');
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+    if(isOpen && mobileCloseBtn) mobileCloseBtn.focus();
+  });
+
+  if(mobileCloseBtn){
+    mobileCloseBtn.addEventListener('click', closeMobileMenu);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeMobileMenu();
+  });
+}
+
+// FORMULAIRE CONTACT SÉCURISÉ CÔTÉ FRONT
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const sendBtn = document.getElementById('send-btn');
+
+function cleanClientValue(value){
+  return value.replace(/[<>]/g, '').trim();
+}
+
+if(contactForm){
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    formStatus.textContent = '';
+
+    const formData = new FormData(contactForm);
+    for (const [key, value] of formData.entries()) {
+      if (typeof value === 'string') formData.set(key, cleanClientValue(value));
+    }
+
+    if(!contactForm.checkValidity()){
+      formStatus.textContent = 'Merci de remplir correctement tous les champs.';
+      formStatus.className = 'form-status error';
+      contactForm.reportValidity();
+      return;
+    }
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Envoi en cours…';
+
+    try{
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if(response.ok && result.success){
+        contactForm.reset();
+        formStatus.textContent = 'Votre demande a bien été envoyée. Je vous réponds rapidement.';
+        formStatus.className = 'form-status success';
+        sendBtn.textContent = '✓ Demande envoyée';
+      }else{
+        throw new Error(result.message || 'Erreur lors de l’envoi.');
+      }
+    }catch(error){
+      formStatus.textContent = error.message || 'Impossible d’envoyer le formulaire pour le moment.';
+      formStatus.className = 'form-status error';
+      sendBtn.textContent = 'Réessayer l’envoi';
+    }finally{
+      sendBtn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>
