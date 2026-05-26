@@ -126,6 +126,7 @@
       <div class="hero-btns">
         <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Prendre RDV gratuit</a>
         <a class="btn btn-outline" href="#" onclick="showPage('services');return false">Voir les services →</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/33756975968?text=Bonjour%2C%20j%27ai%20un%20probl%C3%A8me%20avec%20mon%20appareil.%20Pouvez-vous%20m%27aider%20%3F" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp</a>
       </div>
     </div>
     <div class="hero-card">
@@ -265,6 +266,7 @@
       <div class="cta-btns">
         <a class="btn btn-green" href="#" onclick="showPage('contact');return false">Prendre RDV</a>
         <a class="btn btn-white" href="tel:0756975968">Appeler directement</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/33756975968?text=Bonjour%2C%20j%27ai%20un%20probl%C3%A8me%20avec%20mon%20appareil.%20Pouvez-vous%20m%27aider%20%3F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -462,7 +464,7 @@
   </div>
   <div class="cnt-grid">
     <div class="cnt-infos rv">
-      <div class="cinfo-card"><div class="cinfo-ic">☎</div><div><div class="cinfo-label">Tél & WhatsApp</div><div class="cinfo-val">07 56 97 59 68</div><div class="cinfo-note">Réponse sous 2h en journée</div></div></div>
+      <div class="cinfo-card"><div class="cinfo-ic">☎</div><div><div class="cinfo-label">Tél & WhatsApp</div><div class="cinfo-val">07 56 97 59 68</div><div class="cinfo-actions"><a href="tel:0756975968">Appeler</a> · <a href="https://wa.me/33756975968" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp</a></div><div class="cinfo-note">Réponse sous 2h en journée</div></div></div>
       <div class="cinfo-card"><div class="cinfo-ic">@</div><div><div class="cinfo-label">Email</div><div class="cinfo-val">contact@depannage-accessidev.fr</div><div class="cinfo-note">Réponse sous 24h</div></div></div>
       <div class="cinfo-card"><div class="cinfo-ic">⌖</div><div><div class="cinfo-label">Zone</div><div class="cinfo-val">Saint-Chamond, Loire</div><div class="cinfo-note">Déplacement à domicile +15€</div></div></div>
       <div class="cinfo-card"><div class="cinfo-ic">◴</div><div><div class="cinfo-label">Horaires</div><div class="cinfo-val">Lun–Sam · 9h–19h</div><div class="cinfo-note">Urgences sur demande</div></div></div>
@@ -496,7 +498,10 @@
           <label class="fl" for="message">Décrivez votre problème</label>
           <textarea id="message" name="message" class="fi" maxlength="1500" required placeholder="Ex : Mon PC ne démarre plus depuis hier soir, j'entends un bip au démarrage…"></textarea>
         </div>
-        <button class="submit-btn" id="send-btn" type="submit">Envoyer ma demande · gratuit</button>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="submit-btn" id="send-btn" type="submit">Envoyer ma demande · gratuit</button>
+          <button class="submit-btn" id="send-whatsapp-btn" type="button">Envoyer via WhatsApp</button>
+        </div>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
       
@@ -653,6 +658,29 @@ if(contactForm){
     }finally{
       sendBtn.disabled = false;
     }
+  });
+}
+
+// ENVOI VIA WHATSAPP: compose le message depuis le formulaire et ouvre WhatsApp
+const waBtn = document.getElementById('send-whatsapp-btn');
+if(waBtn && contactForm){
+  waBtn.addEventListener('click', () => {
+    const fn = document.getElementById('firstname')?.value.trim() || '';
+    const ln = document.getElementById('lastname')?.value.trim() || '';
+    const ph = document.getElementById('phone')?.value.trim() || '';
+    const type = document.getElementById('request_type')?.value || '';
+    const msg = document.getElementById('message')?.value.trim() || '';
+
+    let text = '';
+    if(fn || ln) text += `Nom: ${fn} ${ln}\n`;
+    if(ph) text += `Téléphone: ${ph}\n`;
+    if(type) text += `Type: ${type}\n`;
+    if(msg) text += `Message: ${msg}\n`;
+    if(!text) text = 'Bonjour, je souhaite un diagnostic, merci.';
+
+    const phone = '33756975968'; // numéro au format international sans +
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener');
   });
 }
 </script>
