@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
@@ -31,7 +32,8 @@ if ($last && ($now - $last) < 45) {
 }
 file_put_contents($rateFile, (string) $now, LOCK_EX);
 
-function field(string $name, int $maxLength): string {
+function field(string $name, int $maxLength): string
+{
     $value = trim((string)($_POST[$name] ?? ''));
     $value = str_replace(["\r", "\0"], '', $value);
     $value = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value) ?? '';
@@ -89,7 +91,7 @@ foreach ([$firstname, $lastname, $email, $phone, $requestType] as $headerValue) 
     }
 }
 
-$to = 'contact@accessidev.fr';
+$to = 'contact@depannage-accessidev.fr';
 $subject = 'Nouvelle demande AccessiDev - ' . $requestType;
 
 $body = "Nouvelle demande depuis le site AccessiDev\n\n";
@@ -103,7 +105,7 @@ $body .= "IP : {$ip}\n";
 $body .= "Date : " . date('Y-m-d H:i:s') . "\n";
 
 $headers = [
-    'From: Site AccessiDev <contact@accessidev.fr>',
+    'From: Site AccessiDev <contact@depannage-accessidev.fr>',
     'Reply-To: ' . $firstname . ' ' . $lastname . ' <' . $email . '>',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
@@ -115,7 +117,7 @@ $headers = [
 //     '=?UTF-8?B?' . base64_encode($subject) . '?=',
 //     $body,
 //     implode("\r\n", $headers),
-//     '-f contact@accessidev.fr'
+//     '-f contact@depannage-accessidev.fr'
 // );
 
 $sent = mail($to, $subject, $body);
